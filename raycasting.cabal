@@ -1,0 +1,31 @@
+name:                raytracer
+version:             0.1.0.0
+homepage:            https://github.com/phoniccanine
+author:              Tony Hosking
+maintainer:          joseph.fergusson@outlook.com
+copyright:           2019 Joseph F
+category:            Education
+build-type:          Simple
+cabal-version:       >= 1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , codeworld-api >= 0.2.2.1 && < 0.3
+                     , text
+  exposed-modules:     Controller
+                     , Model
+                     , View
+  ghc-options:         -Wall
+
+executable game
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , codeworld-api >= 0.2.2.1 && < 0.3
+                     , raytracer
+                     , text
+  ghc-options:         -Wall -threaded
